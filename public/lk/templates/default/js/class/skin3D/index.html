@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>3D Skin Viewer</title>
+		<script src="three.min.js" type="text/javascript"></script>
+		<script src="skin3D.js" type="text/javascript"></script>
+	</head>
+	
+	<body>
+		<div id="model">
+			<canvas id="canvas" style="display: none"></canvas>
+		</div>
+		
+		<script type="text/javascript">
+			//../../../../upload/catalogSkins/default.png
+			var skin = new skin3D('http://77.43.212.64/upload/files/products/web-lk/demo/lk/upload/catalogSkins/lucelarius.png', document.getElementById('model'));
+			skin.width = 220;
+			skin.height = 185;
+			skin.radius = 30;
+			skin.init();
+			
+			skin.changeSkin('http://77.43.212.64/upload/files/products/web-lk/demo/lk/upload/catalogSkins/default.png');
+			skin.createCloak('http://77.43.212.64/upload/files/products/web-lk/demo/lk/upload/cloaks/hd.png');
+			skin.changeCloak('http://77.43.212.64/upload/files/products/web-lk/demo/lk/upload/cloaks/hero.png');
+			skin.loadFail = function(errorCode) {
+				alert('РїСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° ' + errorCode);
+			};
+		</script>
+	</body>
+</html>
